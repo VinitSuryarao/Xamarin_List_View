@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="List_View.DetailPage" Title="Detail Info">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Welcome to Xamarin" FontSize="Medium"/>
+            <Image  Source="" x:Name="EmpImage"/>
+            <Label Text="Name:- "/>
+            <Entry Text="" x:Name="EmpName"  TextColor="Red"/>
+            <Label Text="Address:- "/>
+            <Entry Text="" x:Name="EmpAddress"  TextColor="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

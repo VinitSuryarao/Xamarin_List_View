@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="List_View.MainPage">
+    
+    <!--Simple List View-->
+    <ContentPage Title="Simple List">
+        <StackLayout>
+            <ListView  x:Name="simpleCityList"/>
+        </StackLayout>
+    </ContentPage>
+
+    <!--Data & Item Binding in List View-->
+    <ContentPage Title="Data And Item Binding">
+        <StackLayout>
+            <ListView  x:Name="viewCellEmpList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Name"/>
+                                    <Label Text="{Binding Name}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Address"/>
+                                    <Label Text="{Binding Address}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+    <!--Text Cell-->
+    <ContentPage Title="Text Cell">
+        <StackLayout>
+            <ListView  x:Name="textCellEmpList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Address}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+    <!--Image Cell-->
+    <ContentPage Title="Image Cell">
+        <StackLayout>
+            <ListView  x:Name="imageCellEmpList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageLink}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+    <!--Get Data of Selected Item from List-->
+    <ContentPage Title="Detail Page">
+        <StackLayout>
+            <ListView  x:Name="getDataEmpList" ItemTapped="clicked_ListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                         <ImageCell Text="{Binding Name}" Detail="{Binding Address}" ImageSource="{Binding ImageLink}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>
